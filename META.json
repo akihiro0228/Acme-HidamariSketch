@@ -54,5 +54,18 @@
       }
    },
    "release_status" : "unstable",
-   "version" : "0.01"
+   "resources" : {
+      "bugtracker" : {
+         "web" : "https://github.com/akihiro0228/Acme-HidamariSketch/issues"
+      },
+      "homepage" : "https://github.com/akihiro0228/Acme-HidamariSketch",
+      "repository" : {
+         "url" : "https://github.com/akihiro0228/Acme-HidamariSketch.git",
+         "web" : "https://github.com/akihiro0228/Acme-HidamariSketch"
+      }
+   },
+   "version" : "0.01",
+   "x_contributors" : [
+      "akihiro_0228 <nano.universe.0228@gmail.com>"
+   ]
 }

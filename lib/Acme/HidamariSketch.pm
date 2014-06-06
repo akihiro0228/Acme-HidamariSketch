@@ -5,7 +5,47 @@ use warnings;
 
 our $VERSION = "0.01";
 
+use Carp qw/croak/;
 
+
+my @characters = qw(
+    Yuno
+    Miyako
+    Hiro
+    Sae
+    Nori
+    Nazuna
+);
+
+
+sub new {
+    my $class = shift;
+
+    my $self = bless {characters => []}, $class;
+
+    $self->_init;
+
+    return $self;
+}
+
+sub characters {
+    my $self = shift;
+
+    return @{$self->{characters}};
+}
+
+sub _init {
+    my $self = shift;
+
+    for my $character (@characters) {
+        my $module_name = 'Acme::HidamariSketch::' . $character;
+
+        eval "require $module_name;";
+        push @{$self->{characters}}, $module_name->new;
+    }
+
+    return 1;
+}
 
 1;
 __END__

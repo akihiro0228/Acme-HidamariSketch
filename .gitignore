@@ -19,6 +19,8 @@ cover_db/
 *.swp
 *.o
 *.obj
+*.sh
+*.snapshot
 
 !LICENSE
 
