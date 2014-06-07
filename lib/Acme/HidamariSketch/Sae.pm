@@ -17,6 +17,7 @@ sub info {
         voice_by    => '新谷 良子',
         room_number => 102,
         sign        => '蠍座',
+        color       => 'パープル',
     );
 }
 

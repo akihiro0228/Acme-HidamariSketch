@@ -17,6 +17,7 @@ sub info {
         voice_by    => '原田 ひとみ',
         room_number => 103,
         sign        => '水瓶座',
+        color       => 'ブルー',
     );
 }
 

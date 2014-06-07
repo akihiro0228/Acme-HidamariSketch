@@ -17,6 +17,7 @@ sub info {
         voice_by    => '小見川 千明',
         room_number => 203,
         sign        => '山羊座',
+        color       => 'ホワイト',
     );
 }
 

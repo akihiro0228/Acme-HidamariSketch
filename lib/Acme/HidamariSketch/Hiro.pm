@@ -17,6 +17,7 @@ sub info {
         voice_by    => '後藤 邑子',
         room_number => 101,
         sign        => '双子座',
+        color       => 'ピンク',
     );
 }
 

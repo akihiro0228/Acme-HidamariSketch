@@ -17,6 +17,7 @@ sub info {
         voice_by    => '水橋 かおり',
         room_number => 202,
         sign        => '天秤座',
+        color       => 'イエロー',
     );
 }
 

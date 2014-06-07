@@ -15,6 +15,7 @@ my @characters = qw(
     Sae
     Nori
     Nazuna
+    Matsuri
 );
 
 

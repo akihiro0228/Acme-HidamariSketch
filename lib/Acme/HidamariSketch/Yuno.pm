@@ -17,6 +17,7 @@ sub info {
         voice_by    => '阿澄 佳奈',
         room_number => 201,
         sign        => '射手座',
+        color       => 'オレンジ',
     );
 }
 
