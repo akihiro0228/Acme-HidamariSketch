@@ -30,9 +30,18 @@ sub new {
 }
 
 sub characters {
-    my $self = shift;
+    my ($self, %options) = @_;
 
     return @{$self->{characters}};
+}
+
+sub apartment {
+    my $self = shift;
+
+    my $module_name = 'Acme::HidamariSketch::Apartment';
+
+    eval "require $module_name";
+    return $module_name->new;
 }
 
 sub _init {
