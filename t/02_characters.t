@@ -19,8 +19,15 @@ subtest 'characters' => sub {
         is $characters[0]->{voice_by},    '阿澄 佳奈';
         is $characters[0]->{birthday},    '5/5';
         is $characters[0]->{sign},        '射手座';
-        is $characters[0]->{room_number},  201;
         is $characters[0]->{color},       'オレンジ';
+        is_deeply 
+            $characters[0]->{room_number}, {
+                before => undef,
+                first  => 201,
+                second => 201,
+                third  => 201,
+            }
+        ;
     };
     
     subtest '宮子' => sub {
@@ -30,8 +37,15 @@ subtest 'characters' => sub {
         is $characters[1]->{voice_by},    '水橋 かおり';
         is $characters[1]->{birthday},    '10/10';
         is $characters[1]->{sign},        '天秤座';
-        is $characters[1]->{room_number},  202;
         is $characters[1]->{color},       'イエロー';
+        is_deeply 
+            $characters[1]->{room_number}, {
+                before => undef,
+                first  => 202,
+                second => 202,
+                third  => 202,
+            }
+        ;
     };
 
     subtest 'ヒロ' => sub {
@@ -41,8 +55,15 @@ subtest 'characters' => sub {
         is $characters[2]->{voice_by},    '後藤 邑子';
         is $characters[2]->{birthday},    '6/15';
         is $characters[2]->{sign},        '双子座';
-        is $characters[2]->{room_number},  101;
         is $characters[2]->{color},       'ピンク';
+        is_deeply 
+            $characters[2]->{room_number}, {
+                before => 203, 
+                first  => 101,
+                second => 101,
+                third  => undef,
+            }
+        ;
     };
 
     subtest '沙英' => sub {
@@ -52,8 +73,15 @@ subtest 'characters' => sub {
         is $characters[3]->{voice_by},    '新谷 良子';
         is $characters[3]->{birthday},    '11/3';
         is $characters[3]->{sign},        '蠍座';
-        is $characters[3]->{room_number},  102;
         is $characters[3]->{color},       'パープル';
+        is_deeply 
+            $characters[3]->{room_number}, {
+                before => 102, 
+                first  => 102,
+                second => 102,
+                third  => undef,
+            }
+        ;
     };
 
     subtest '乃莉' => sub {
@@ -63,8 +91,15 @@ subtest 'characters' => sub {
         is $characters[4]->{voice_by},       '原田 ひとみ';
         is $characters[4]->{birthday},       '2/6';
         is $characters[4]->{sign},           '水瓶座';
-        is $characters[4]->{room_number},     103;
         is $characters[4]->{color},          'ブルー';
+        is_deeply 
+            $characters[4]->{room_number}, {
+                before => undef, 
+                first  => undef,
+                second => 103,
+                third  => 103,
+            }
+        ;
     };
 
     subtest 'なずな' => sub {
@@ -74,8 +109,15 @@ subtest 'characters' => sub {
         is $characters[5]->{voice_by},    '小見川 千明';
         is $characters[5]->{birthday},    '1/7';
         is $characters[5]->{sign},        '山羊座';
-        is $characters[5]->{room_number},  203;
         is $characters[5]->{color},       'ホワイト';
+        is_deeply 
+            $characters[5]->{room_number}, {
+                before => undef, 
+                first  => undef, 
+                second => 203,
+                third  => 203,
+            }
+        ;
     };
 
     subtest '茉里' => sub {
@@ -85,8 +127,51 @@ subtest 'characters' => sub {
         is $characters[6]->{voice_by},    '???';
         is $characters[6]->{birthday},    '???';
         is $characters[6]->{sign},        '???';
-        is $characters[6]->{room_number}, '???';
         is $characters[6]->{color},       '???';
+        is_deeply 
+            $characters[6]->{room_number}, {
+                before => undef,
+                first  => undef,
+                second => undef, 
+                third  => 101,
+            }
+        ;
+    };
+
+    subtest 'リリ' => sub {
+        is $characters[7]->{name_ja},     'リリ';
+        is $characters[7]->{name_en},     'riri';
+        is $characters[7]->{nickname},    '???';
+        is $characters[7]->{voice_by},    '白石 涼子';
+        is $characters[7]->{birthday},    '???';
+        is $characters[7]->{sign},        '???';
+        is $characters[7]->{color},       '???';
+        is_deeply 
+            $characters[7]->{room_number}, {
+                before => 101,
+                first  => undef,
+                second => undef, 
+                third  => undef,
+            }
+        ;
+    };
+
+    subtest 'みさと' => sub {
+        is $characters[8]->{name_ja},     'みさと';
+        is $characters[8]->{name_en},     'misato';
+        is $characters[8]->{nickname},    '???';
+        is $characters[8]->{voice_by},    '小清水 亜美';
+        is $characters[8]->{birthday},    '???';
+        is $characters[8]->{sign},        '???';
+        is $characters[8]->{color},       '???';
+        is_deeply 
+            $characters[8]->{room_number}, {
+                before => 201,
+                first  => undef,
+                second => undef, 
+                third  => undef,
+            }
+        ;
     };
 };
 

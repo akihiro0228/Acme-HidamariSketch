@@ -5,7 +5,7 @@ use warnings;
 
 use base qw/Acme::HidamariSketch::Base/;
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 
 sub info {
@@ -15,9 +15,10 @@ sub info {
         nickname    => qw/のりっぺ ノリスケ ノリコさん/,
         birthday    => '2/6',
         voice_by    => '原田 ひとみ',
-        room_number => 103,
+        room_number => {before => undef, first => undef, second => 103, third => 103},
         sign        => '水瓶座',
         color       => 'ブルー',
+        course      => '美術科',
     );
 }
 

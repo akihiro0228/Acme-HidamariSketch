@@ -5,7 +5,7 @@ use warnings;
 
 use base qw/Acme::HidamariSketch::Base/;
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 
 sub info {
@@ -15,9 +15,10 @@ sub info {
         nickname    => '???',
         birthday    => '???',
         voice_by    => '???',
-        room_number => '???',
+        room_number => {before => undef, first => undef, second => undef, third => 101},
         sign        => '???',
         color       => '???',
+        course      => '美術科',
     );
 }
 

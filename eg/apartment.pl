@@ -15,6 +15,23 @@ my $apartment = $hidamari->apartment;
 # $apartment->knock;
 
 # 各部屋をノックすると会えます
+printf "[" . $hidamari->year . "]\n";
+printf $apartment->knock(201)->{name_ja} . "\n";
+printf $apartment->knock(202)->{name_ja} . "\n";
+printf $apartment->knock(203)->{name_ja} . "\n";
+printf $apartment->knock(101)->{name_ja} . "\n";
+printf $apartment->knock(103)->{name_ja} . "\n";
+
+# 存在しない部屋はノックできないよ？
+# $apartment->knock(104);
+
+# 沙英さんとヒロさんがいない？
+# なら時間を戻しましょう
+$hidamari->year('second');
+$apartment = $hidamari->apartment;
+
+# これで沙英さんとヒロさんにも会えます
+printf "\n[" . $hidamari->year . "]\n";
 printf $apartment->knock(201)->{name_ja} . "\n";
 printf $apartment->knock(202)->{name_ja} . "\n";
 printf $apartment->knock(203)->{name_ja} . "\n";
@@ -22,5 +39,3 @@ printf $apartment->knock(101)->{name_ja} . "\n";
 printf $apartment->knock(102)->{name_ja} . "\n";
 printf $apartment->knock(103)->{name_ja} . "\n";
 
-# 存在しない部屋はノックできないよ？
-# $apartment->knock(104);

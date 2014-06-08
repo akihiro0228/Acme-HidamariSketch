@@ -16,8 +16,18 @@ foreach my $character (@characters) {
     printf "-----------------------\n";
     printf "name:        " . $character->{name_ja}     . "\n";
     printf "birthday:    " . $character->{birthday}    . "\n";
-    printf "room_number: " . $character->{room_number} . "\n";
     printf "sign:        " . $character->{sign}        . "\n";
     printf "color:       " . $character->{color}       . "\n";
+    printf "room_number:\n{\n";
+    my $room_number = $character->{room_number};
+    for my $year (qw/before first second third/) {
+        if (defined $room_number->{$year}) {
+            printf '  ' . $year . ': ' . $room_number->{$year} . "\n";
+        }
+        else {
+            printf '  ' . $year . ": undef\n";
+        };
+    }
+    printf "}\n";
 }
 

@@ -3,9 +3,7 @@ use 5.008005;
 use strict;
 use warnings;
 
-our $VERSION = "0.01";
-
-use Carp qw/croak/;
+our $VERSION = "0.05";
 
 
 my @characters = qw(
@@ -16,17 +14,33 @@ my @characters = qw(
     Nori
     Nazuna
     Matsuri
+    Riri
+    Misato
 );
+
+my %year = (
+    before => 0,
+    first  => 1,
+    second => 2,
+    third  => 3,
+);
+
+my $SINGLETON;
 
 
 sub new {
-    my $class = shift;
+    if ($SINGLETON) {
+        return $SINGLETON;
+    }
+    else {
+        my $class = shift;
 
-    my $self = bless {characters => []}, $class;
+        my $SINGLETON = bless {characters => [], year => 'third'}, $class;
 
-    $self->_init;
+        $SINGLETON->_init;
 
-    return $self;
+        return $SINGLETON;
+    }
 }
 
 sub characters {
@@ -41,7 +55,29 @@ sub apartment {
     my $module_name = 'Acme::HidamariSketch::Apartment';
 
     eval "require $module_name";
-    return $module_name->new;
+
+    my @tenant;
+    for my $character (@{$self->{characters}}) {
+        if (defined $character->{room_number}->{$self->year}) {
+            push @tenant, $character;
+        }
+    }
+
+    return $module_name->new({
+        tenants => [@tenant],
+        year    => $self->{year},
+    });
+}
+
+sub year {
+    my $self = shift;
+    if (@_) {
+        my $year = shift;
+        for my $key (keys %year) {
+            $self->{year} = $year if ($key eq $year);
+        }
+    }
+    return $self->{year};
 }
 
 sub _init {
