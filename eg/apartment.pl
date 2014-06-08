@@ -5,6 +5,7 @@ use utf8;
 use File::Spec;
 use File::Basename;
 use lib File::Spec->catdir(dirname(__FILE__), '../lib');
+use Encode qw/encode/;
 
 use Acme::HidamariSketch;
 
@@ -15,7 +16,7 @@ my $apartment = $hidamari->apartment;
 # $apartment->knock;
 
 # 各部屋をノックすると会えます
-printf "[" . $hidamari->year . "]\n";
+printf encode('utf8', "\n[ 3年目 ]\n");
 printf $apartment->knock(201)->{name_ja} . "\n";
 printf $apartment->knock(202)->{name_ja} . "\n";
 printf $apartment->knock(203)->{name_ja} . "\n";
@@ -31,11 +32,31 @@ $hidamari->year('second');
 $apartment = $hidamari->apartment;
 
 # これで沙英さんとヒロさんにも会えます
-printf "\n[" . $hidamari->year . "]\n";
+printf encode('utf8', "\n[ 2年目 ]\n");
 printf $apartment->knock(201)->{name_ja} . "\n";
 printf $apartment->knock(202)->{name_ja} . "\n";
 printf $apartment->knock(203)->{name_ja} . "\n";
 printf $apartment->knock(101)->{name_ja} . "\n";
 printf $apartment->knock(102)->{name_ja} . "\n";
 printf $apartment->knock(103)->{name_ja} . "\n";
+
+# 全ての年度を網羅してます
+$hidamari->year('first');
+$apartment = $hidamari->apartment;
+
+printf encode('utf8', "\n[ 1年目 ]\n");
+printf $apartment->knock(201)->{name_ja} . "\n";
+printf $apartment->knock(202)->{name_ja} . "\n";
+printf $apartment->knock(101)->{name_ja} . "\n";
+printf $apartment->knock(102)->{name_ja} . "\n";
+
+# もちろんリリさんとみさとさんも帰ってきます
+$hidamari->year('before');
+$apartment = $hidamari->apartment;
+
+printf encode('utf8', "\n[ 前年 ]\n");
+printf $apartment->knock(201)->{name_ja} . "\n";
+printf $apartment->knock(203)->{name_ja} . "\n";
+printf $apartment->knock(101)->{name_ja} . "\n";
+printf $apartment->knock(102)->{name_ja} . "\n";
 
