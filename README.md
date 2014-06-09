@@ -7,7 +7,7 @@ Acme::HidamariSketch - This module of the Hidamalar, by the Hidamalar, for the H
     use Acme::HidamariSketch;
 
     # Let's make the Hidamari-world first.
-    my $hidamari = Acme::HidamariSketch;
+    my $hidamari = Acme::HidamariSketch->new;
    
     # You can see the character information.
     my @characters = $hidamari->characters;
