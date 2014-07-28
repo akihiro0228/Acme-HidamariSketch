@@ -2,6 +2,7 @@ package Acme::HidamariSketch::Nazuna;
 
 use strict;
 use warnings;
+use utf8;
 
 use base qw/Acme::HidamariSketch::Base/;
 
@@ -17,7 +18,7 @@ sub info {
         voice_by    => '小見川 千明',
         room_number => {before => undef, first => undef, second => 203, third => 203},
         sign        => '山羊座',
-        color       => 'ホワイト',
+        color       => '#F5F5F5',    # ホワイト
         course      => '普通科',
     );
 }

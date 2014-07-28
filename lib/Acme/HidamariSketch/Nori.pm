@@ -2,6 +2,7 @@ package Acme::HidamariSketch::Nori;
 
 use strict;
 use warnings;
+use utf8;
 
 use base qw/Acme::HidamariSketch::Base/;
 
@@ -17,7 +18,7 @@ sub info {
         voice_by    => '原田 ひとみ',
         room_number => {before => undef, first => undef, second => 103, third => 103},
         sign        => '水瓶座',
-        color       => 'ブルー',
+        color       => '#89CEEB',   # ブルー
         course      => '美術科',
     );
 }

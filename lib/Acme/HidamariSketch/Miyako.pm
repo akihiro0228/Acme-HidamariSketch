@@ -2,6 +2,7 @@ package Acme::HidamariSketch::Miyako;
 
 use strict;
 use warnings;
+use utf8;
 
 use base qw/Acme::HidamariSketch::Base/;
 
@@ -17,7 +18,7 @@ sub info {
         voice_by    => '水橋 かおり',
         room_number => {before => undef, first => 202, second => 202, third => 202},
         sign        => '天秤座',
-        color       => 'イエロー',
+        color       => '#FFFF00',   # イエロー
         course      => '美術科',
     );
 }

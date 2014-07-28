@@ -1,6 +1,7 @@
 package Acme::HidamariSketch::Apartment;
 use strict;
 use warnings;
+use utf8;
 use Data::Dumper;
 
 
@@ -21,10 +22,10 @@ sub new {
 
 sub knock {
     my ($self, $knock_room) = @_;
-  
+ 
     if (!defined $knock_room) {
-        printf "どこノックしてるんですか？\n";
-        return 1;
+        # 部屋が存在しない
+        return undef;
     }
 
     for my $tenant (@{$self->{tenants}}) {
@@ -34,7 +35,7 @@ sub knock {
         };
     }
 
-    printf "そんな部屋番号ありませんよ？\n";
-    return 1;
+    # 存在しない部屋番号
+    return undef;
 }
 

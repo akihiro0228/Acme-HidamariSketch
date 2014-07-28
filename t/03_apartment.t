@@ -1,5 +1,7 @@
 use strict;
 use warnings;
+use utf8;
+binmode(STDOUT, ":utf8");
 use Test::More;
 
 use Acme::HidamariSketch;
@@ -22,8 +24,8 @@ subtest 'apartment' => sub {
     is_deeply $apartment->knock(203), $nazuna, 'なずながお出迎え';
     is_deeply $apartment->knock(103), $nori,   '乃莉がお出迎え'  ;
 
-    is $apartment->knock,      1;
-    is $apartment->knock(104), 1;
+    is $apartment->knock,      undef;
+    is $apartment->knock(104), undef;
 };
 
 
