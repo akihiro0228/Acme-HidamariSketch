@@ -5,7 +5,7 @@ use utf8;
 use Data::Dumper;
 
 
-our $VERSION = "0.04";
+our $VERSION = "0.05";
 
 
 sub new {

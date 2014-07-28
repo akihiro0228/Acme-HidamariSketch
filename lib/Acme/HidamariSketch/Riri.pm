@@ -6,7 +6,7 @@ use utf8;
 
 use base qw/Acme::HidamariSketch::Base/;
 
-our $VERSION = '0.01';
+our $VERSION = '0.05';
 
 
 sub info {
